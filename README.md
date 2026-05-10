@@ -5,7 +5,7 @@
 [![CUDA](https://img.shields.io/badge/CUDA-12.8-green)](https://developer.nvidia.com/cuda-toolkit)
 [![GPU](https://img.shields.io/badge/GPU-RTX%205060%20Ti-blue)]()
 
-Reproduction and improvement of the AODL project (CDS 525). Achieves **75.66%** test accuracy on CIFAR-100, exceeding the original **72%** by **+3.66%** through cosine annealing, label smoothing, and mixed precision training.
+Reproduction and improvement of the [AODL project](https://github.com/951135150/CDS525-Group-Project-ResNetSE) (CDS 525). Achieves **75.66%** test accuracy on CIFAR-100, exceeding the [original](https://github.com/951135150/CDS525-Group-Project-ResNetSE) **72%** by **+3.66%** through cosine annealing, label smoothing, and mixed precision training.
 
 ## Key Improvements
 
@@ -85,3 +85,8 @@ Upload any image to get top-5 CIFAR-100 predictions with confidence scores.
 - scikit-learn
 - matplotlib
 - Flask (for web demo)
+
+## Reference
+
+- Original project: [CDS525-Group-Project-ResNetSE](https://github.com/951135150/CDS525-Group-Project-ResNetSE)
+- This reproduction: [AODL-CIFAR100](https://github.com/2499146834-arch/AODL-CIFAR100)

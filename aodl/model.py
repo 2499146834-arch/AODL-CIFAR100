@@ -2,7 +2,7 @@
 
 import torch.nn as nn
 from torchvision.models import resnet18, ResNet18_Weights
-from config import SE_REDUCTION, DROPOUT, HIDDEN_DIM, BACKBONE_OUT, NUM_CLASSES
+from .config import SE_REDUCTION, DROPOUT, HIDDEN_DIM, BACKBONE_OUT, NUM_CLASSES
 
 
 class SEBlock(nn.Module):

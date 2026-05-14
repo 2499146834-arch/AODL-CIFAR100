@@ -3,3 +3,5 @@ torchvision>=0.15
 scikit-learn
 matplotlib
 numpy
+flask
+pillow

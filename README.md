@@ -47,17 +47,22 @@ Upload any image to get top-5 CIFAR-100 predictions with confidence scores.
 
 ```
 ├── main.py              # Entry point (train / exp / test)
-├── model.py             # ResNet-18 + SE attention
-├── data.py              # CIFAR-100 data pipeline
-├── train.py             # Training loop + AMP + cosine annealing
-├── eval.py              # Evaluation, confusion matrix, ROC, visualizations
-├── experiments.py       # Multi-seed comparative experiments
 ├── app.py               # Flask web demo
-├── config.py            # Hyperparameters
-├── checkpoints/         # Trained model weights
-├── figures/             # Generated plots
-├── results/             # Classification report + experiment CSV
-└── reports/             # Full experiment reports (CN + EN)
+├── aodl/                # Core Python package
+│   ├── config.py        # Hyperparameters
+│   ├── model.py         # ResNet-18 + SE attention
+│   ├── data.py          # CIFAR-100 data pipeline
+│   ├── train.py         # Training loop + AMP + cosine annealing
+│   ├── eval.py          # Evaluation, confusion matrix, ROC, visualizations
+│   └── experiments.py   # Multi-seed comparative experiments
+├── models/              # Model artifacts
+│   ├── checkpoints/     # Trained model weights
+│   └── pretrained/      # Pretrained backbone weights
+├── outputs/             # Generated outputs
+│   ├── figures/         # Plots & visualizations
+│   └── results/         # Classification reports & experiment CSV
+├── data/                # CIFAR-100 dataset
+└── docs/                # Reports & documentation
 ```
 
 ## Results Summary

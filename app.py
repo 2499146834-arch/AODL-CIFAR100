@@ -5,8 +5,8 @@ import torch.nn.functional as F
 from PIL import Image
 from flask import Flask, render_template_string, request, jsonify
 from torchvision import transforms
-from model import CIFAR100ResNet
-from config import DEVICE, IMAGE_SIZE, CIFAR100_MEAN, CIFAR100_STD, CHECKPOINT_DIR
+from aodl.model import CIFAR100ResNet
+from aodl.config import DEVICE, IMAGE_SIZE, CIFAR100_MEAN, CIFAR100_STD, CHECKPOINT_DIR
 
 app = Flask(__name__)
 

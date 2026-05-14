@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 from torch.cuda.amp import autocast, GradScaler
 from pathlib import Path
-from config import (
+from .config import (
     DEVICE, EARLY_STOP_PATIENCE, CHECKPOINT_DIR,
     USE_COSINE_ANNEALING, COSINE_T_MAX, COSINE_ETA_MIN, USE_AMP,
 )

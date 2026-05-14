@@ -11,7 +11,7 @@ from sklearn.metrics import (
     roc_curve, auc, RocCurveDisplay,
 )
 from sklearn.preprocessing import label_binarize
-from config import DEVICE, NUM_CLASSES, RESULTS_DIR, FIGURES_DIR
+from .config import DEVICE, NUM_CLASSES, RESULTS_DIR, FIGURES_DIR
 
 
 def full_evaluation(model, test_loader, class_names):

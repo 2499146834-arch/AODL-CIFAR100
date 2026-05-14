@@ -13,12 +13,12 @@ multiprocessing.freeze_support()
 import sys
 import torch
 import torch.nn as nn
-from data import get_dataloaders
-from model import CIFAR100ResNet
-from train import train, set_seed
-from eval import full_evaluation, visualize_predictions
-from experiments import run_all_experiments
-from config import (
+from aodl.data import get_dataloaders
+from aodl.model import CIFAR100ResNet
+from aodl.train import train, set_seed
+from aodl.eval import full_evaluation, visualize_predictions
+from aodl.experiments import run_all_experiments
+from aodl.config import (
     DEVICE, SEEDS, CHECKPOINT_DIR, FIGURES_DIR, RESULTS_DIR,
     DEFAULT_LR, DEFAULT_BS, DEFAULT_EPOCHS, LABEL_SMOOTHING,
     NUM_WORKERS, USE_COSINE_ANNEALING,
@@ -84,7 +84,7 @@ def mode_test():
 
     from torch.utils.data import DataLoader
     from torchvision import datasets, transforms
-    from config import CIFAR100_MEAN, CIFAR100_STD, IMAGE_SIZE, DATA_DIR
+    from aodl.config import CIFAR100_MEAN, CIFAR100_STD, IMAGE_SIZE, DATA_DIR
     test_ds = datasets.CIFAR100(
         root=DATA_DIR, train=False, download=False,
         transform=transforms.Compose([

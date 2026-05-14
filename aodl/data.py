@@ -3,7 +3,7 @@
 import torch
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
-from config import DATA_DIR, CIFAR100_MEAN, CIFAR100_STD, IMAGE_SIZE
+from .config import DATA_DIR, CIFAR100_MEAN, CIFAR100_STD, IMAGE_SIZE
 
 
 def get_transforms(train: bool) -> transforms.Compose:

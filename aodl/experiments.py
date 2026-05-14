@@ -8,10 +8,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
-from data import get_dataloaders
-from model import CIFAR100ResNet
-from train import train, set_seed
-from config import (
+from .data import get_dataloaders
+from .model import CIFAR100ResNet
+from .train import train, set_seed
+from .config import (
     DEVICE, SEEDS, EXP_LR_LIST, EXP_BS_LIST, EXP_EPOCHS,
     DEFAULT_LR, DEFAULT_BS, LABEL_SMOOTHING, N_RUNS,
     RESULTS_DIR, FIGURES_DIR, NUM_WORKERS, USE_COSINE_ANNEALING,

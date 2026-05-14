@@ -7,12 +7,12 @@ from pathlib import Path
 SEEDS = [42, 123, 999]  # multi-seed for statistical reliability
 
 # ── Paths ────────────────────────────────────────────────────────
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).parent.parent
 DATA_DIR = ROOT / "data"
-CHECKPOINT_DIR = ROOT / "checkpoints"
-RESULTS_DIR = ROOT / "results"
-FIGURES_DIR = ROOT / "figures"
-WEIGHTS_DIR = ROOT / "pretrained"
+CHECKPOINT_DIR = ROOT / "models" / "checkpoints"
+RESULTS_DIR = ROOT / "outputs" / "results"
+FIGURES_DIR = ROOT / "outputs" / "figures"
+WEIGHTS_DIR = ROOT / "models" / "pretrained"
 
 # Redirect all torch cache to project dir (don't use C:)
 torch.hub.set_dir(str(WEIGHTS_DIR))

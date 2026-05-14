@@ -46,24 +46,29 @@ Upload any image to get top-5 CIFAR-100 predictions with confidence scores.
 ## Project Structure
 
 ```
-├── main.py              # Entry point (train / exp / test)
+├── main.py              # CLI entry point (train / exp / test)
 ├── app.py               # Flask web demo
 ├── aodl/                # Core Python package
-│   ├── config.py        # Hyperparameters
-│   ├── model.py         # ResNet-18 + SE attention
-│   ├── data.py          # CIFAR-100 data pipeline
-│   ├── train.py         # Training loop + AMP + cosine annealing
-│   ├── eval.py          # Evaluation, confusion matrix, ROC, visualizations
-│   └── experiments.py   # Multi-seed comparative experiments
+│   ├── __init__.py
+│   ├── config.py        # Centralized hyperparameters & paths
+│   ├── model.py         # ResNet-18 + SE attention (CIFAR100ResNet)
+│   ├── data.py          # CIFAR-100 data loaders & augmentations
+│   ├── train.py         # Training loop (AMP, early stopping, cosine annealing)
+│   ├── eval.py          # Evaluation (classification report, confusion matrix, ROC)
+│   └── experiments.py   # Multi-seed comparative experiments (LR, BS, loss, SE)
 ├── models/              # Model artifacts
-│   ├── checkpoints/     # Trained model weights
-│   └── pretrained/      # Pretrained backbone weights
+│   ├── checkpoints/     # Trained model weights (.pth)
+│   └── pretrained/      # Pretrained ResNet-18 backbone
 ├── outputs/             # Generated outputs
-│   ├── figures/         # Plots & visualizations
-│   └── results/         # Classification reports & experiment CSV
-├── data/                # CIFAR-100 dataset
-└── docs/                # Reports & documentation
+│   ├── figures/         # Plots (.png)
+│   └── results/         # Reports & experiment CSV
+├── data/                # CIFAR-100 dataset (auto-downloaded)
+├── docs/                # Project reports (CN + EN)
+├── requirements.txt     # Python dependencies
+└── .gitignore
 ```
+
+All source modules are under the `aodl` package. Scripts at root import via `from aodl.xxx import ...`.
 
 ## Results Summary
 
@@ -84,12 +89,19 @@ Upload any image to get top-5 CIFAR-100 predictions with confidence scores.
 
 ## Requirements
 
-- Python 3.8+
-- PyTorch 2.0+
-- torchvision
-- scikit-learn
-- matplotlib
-- Flask (for web demo)
+```bash
+pip install -r requirements.txt
+```
+
+| Package | Purpose |
+|---|---|
+| torch >= 2.0 | Deep learning framework |
+| torchvision >= 0.15 | Pretrained models & datasets |
+| scikit-learn | Metrics (classification report, confusion matrix, ROC) |
+| matplotlib | Figure generation |
+| numpy | Numerical computation |
+| flask | Web demo (`app.py`) |
+| pillow | Image I/O for web demo |
 
 ## Reference
 
